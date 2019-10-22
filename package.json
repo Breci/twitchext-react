@@ -1,0 +1,22 @@
+{
+  "name": "twitchext-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "dependencies": {
+    "react": "^16.10.2",
+    "unstated-next": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.2",
+    "@types/react": "^16.9.9",
+    "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
