@@ -1,11 +1,10 @@
 {
   "name": "twitchext-react",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
-    "react": "^16.10.2",
     "unstated-next": "^1.1.0"
   },
   "devDependencies": {
@@ -13,10 +12,19 @@
     "@types/react": "^16.9.9",
     "prettier": "^1.18.2"
   },
+  "peerDependencies": {
+    "react": "16.8.X"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Breci/twitchext-react"
+  }
 }
