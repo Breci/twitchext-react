@@ -1,35 +1,39 @@
 import { useMemo, useState } from "react";
+import { TwitchExtFeatureFlags, TwitchExtFeatures } from "../types/";
 
 export const useExtensionFeatures = () => {
-  const [initialized, setInitialized] = useState(false);
-
-  const [isChatEnabled, setIsChatEnabled] = useState(false);
-  const [isBitsEnabled, setIsBitsEnabled] = useState(false);
-  const [
-    isSubscriptionStatusAvailable,
-    setIsSubscriptionStatusAvailable
-  ] = useState(false);
+  const [features, setFeatures] = useState<
+    TwitchExtFeatureFlags & { initialized: boolean }
+  >({
+    isBitsEnabled: window.Twitch.ext.features.isBitsEnabled,
+    isChatEnabled: window.Twitch.ext.features.isChatEnabled,
+    isSubscriptionStatusAvailable:
+      window.Twitch.ext.features.isSubscriptionStatusAvailable,
+    initialized: false
+  });
 
   const init = useMemo(() => {
     return () => {
       window.Twitch.ext.features.onChanged(() => {
-        setInitialized(true);
-        setIsChatEnabled(window.Twitch.ext.features.isChatEnabled);
-        setIsBitsEnabled(window.Twitch.ext.features.isBitsEnabled);
-        setIsSubscriptionStatusAvailable(
-          window.Twitch.ext.features.isSubscriptionStatusAvailable
-        );
+        setFeatures({
+          isBitsEnabled: window.Twitch.ext.features.isBitsEnabled,
+          isChatEnabled: window.Twitch.ext.features.isChatEnabled,
+          isSubscriptionStatusAvailable:
+            window.Twitch.ext.features.isSubscriptionStatusAvailable,
+          initialized: true
+        });
       });
     };
   }, []);
 
+  const fullFeatures = useMemo<
+    TwitchExtFeatures & { initialized: boolean }
+  >(() => {
+    return { onChanged: window.Twitch.ext.features.onChanged, ...features };
+  }, [features]);
+
   return {
     init,
-    data: {
-      isChatEnabled,
-      isBitsEnabled,
-      isSubscriptionStatusAvailable,
-      onChanged: window.Twitch.ext.features.onChanged
-    }
+    data: fullFeatures
   };
 };

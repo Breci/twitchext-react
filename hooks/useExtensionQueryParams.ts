@@ -4,7 +4,7 @@ import {
   ExtensionOutState,
   ExtensionPlatform,
   ExtensionState
-} from "../types";
+} from "../types/";
 
 export const useExtensionQueryParams = () => {
   const params = new URLSearchParams(window.location.search);

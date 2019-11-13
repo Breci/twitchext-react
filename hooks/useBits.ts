@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TwitchExtBitsTransaction } from "../types";
+import { TwitchExtBitsTransaction } from "../types/";
 
 export const useExtensionBits = () => {
   const [hasOngoingTransaction, setHasOngoingTransaction] = useState(false);
