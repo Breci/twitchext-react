@@ -9,15 +9,19 @@ export const useExtensionBits = () => {
   };
 
   const onTransactionCancelled = (callback: () => void) => {
-    window.Twitch.ext.bits.onTransactionCancelled(callback);
-    setHasOngoingTransaction(false);
+    window.Twitch.ext.bits.onTransactionCancelled(() => {
+      callback();
+      setHasOngoingTransaction(false);
+    });
   };
 
   const onTransactionComplete = (
     callback: (transaction: TwitchExtBitsTransaction) => void
   ) => {
-    window.Twitch.ext.bits.onTransactionComplete(callback);
-    setHasOngoingTransaction(false);
+    window.Twitch.ext.bits.onTransactionComplete(transaction => {
+      callback(transaction);
+      setHasOngoingTransaction(false);
+    });
   };
 
   return {
