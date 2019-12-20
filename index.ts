@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState } from "react";
 import { useExtensionQueryParams } from "./hooks/useExtensionQueryParams";
 import { useExtensionActions } from "./hooks/useExtensionActions";
 import { useExtensionConfiguration } from "./hooks/useConfiguration";
-import { createContainer } from "unstated-next";
 import { useExtensionChannel } from "./hooks/useExtensionChannel";
 
 const useExtension = () => {
@@ -50,7 +49,7 @@ const useExtension = () => {
   const data = useMemo(() => {
     return {
       rig: window.Twitch.ext.rig,
-      purcheses: window.Twitch.ext.purchases,
+      purchases: window.Twitch.ext.purchases,
       environment: window.Twitch.ext.environment,
       version: window.Twitch.ext.version,
       onAuthorized: window.Twitch.ext.onAuthorized,
@@ -92,13 +91,9 @@ const useExtension = () => {
   return data;
 };
 
-const Extension = createContainer(useExtension);
-const ExtensionProvider = Extension.Provider;
-const useExt = Extension.useContainer;
+export { ExtensionProvider, useExt } from "./Provider";
 
 export {
-  useExt,
-  ExtensionProvider,
   useExtension,
   useExtensionBits,
   useExtensionContext,

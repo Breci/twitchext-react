@@ -1,12 +1,9 @@
 {
   "name": "twitchext-react",
-  "version": "0.0.18",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "dependencies": {
-    "unstated-next": "^1.1.0"
-  },
   "devDependencies": {
     "@types/node": "^12.11.2",
     "@types/react": "^16.9.9",
