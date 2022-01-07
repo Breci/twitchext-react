@@ -27,11 +27,12 @@ const useExtension = () => {
   const actions = useExtensionActions();
 
   const [clientId, setClientId] = useState("");
+  const [helixToken, setHelixToken] = useState("");
 
   const [initialized, setInitialized] = useState(false);
   useEffect(() => {
     let init = false;
-    window.Twitch.ext.onAuthorized(({ channelId, clientId, token, userId }) => {
+    window.Twitch.ext.onAuthorized(({ channelId, clientId, token, userId,helixToken }) => {
       if (!init) {
         init = true;
         initFeatures();
@@ -40,8 +41,10 @@ const useExtension = () => {
         initConfiguration();
         updateChannel(channelId);
         setClientId(clientId);
+        setHelixToken(helixToken);
       } else {
         refreshViewer();
+        setHelixToken(helixToken); // refresh the token if necessary
       }
     });
   }, []);
@@ -70,7 +73,8 @@ const useExtension = () => {
       actions,
       initialized,
       channel: channelData,
-      clientId
+      clientId,
+      helixToken
     };
   }, [
     configurationData,

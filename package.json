@@ -1,16 +1,17 @@
 {
   "name": "twitchext-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "devDependencies": {
-    "@types/node": "^12.11.2",
-    "@types/react": "^16.9.9",
-    "prettier": "^1.18.2"
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "prettier": "^1.19.1",
+    "react": "^17.0.2"
   },
   "peerDependencies": {
-    "react": "16.8.X"
+    "react": ">= 16.X.X"
   },
   "scripts": {
     "build": "tsc"

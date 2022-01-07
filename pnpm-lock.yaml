@@ -1,0 +1,36 @@
+devDependencies:
+  '@types/node': 12.12.24
+  '@types/react': 16.9.17
+  prettier: 1.19.1
+lockfileVersion: 5.1
+packages:
+  /@types/node/12.12.24:
+    dev: true
+    resolution:
+      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
+  /@types/prop-types/15.7.3:
+    dev: true
+    resolution:
+      integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  /@types/react/16.9.17:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 2.6.8
+    dev: true
+    resolution:
+      integrity: sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
+  /csstype/2.6.8:
+    dev: true
+    resolution:
+      integrity: sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
+  /prettier/1.19.1:
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+specifiers:
+  '@types/node': ^12.12.24
+  '@types/react': ^16.9.17
+  prettier: ^1.19.1

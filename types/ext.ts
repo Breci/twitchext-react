@@ -12,6 +12,8 @@ export interface TwitchExt {
   version: string;
 
   channel: TwitchExtChannel;
+  
+  helixToken: string;
 
   environment: "production";
 
@@ -52,6 +54,7 @@ export interface TwitchExtAuthorized {
   clientId: string;
   token: string;
   userId: string;
+  helixToken:string
 }
 
 export type OnAuthorizedCallback = (auth: TwitchExtAuthorized) => void;
