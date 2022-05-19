@@ -43,7 +43,7 @@ export const useExtensionViewer = () => {
       onChanged: window.Twitch.ext.viewer.onChanged,
       ...viewer
     };
-  }, []);
+  }, [viewer]);
 
   return {
     refresh,

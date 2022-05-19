@@ -76,7 +76,9 @@ The same structure is used to store the data under the `context` field.
 ## Other framework
 
 ### Vue
-You can use my other package for VueJs/Vuex : [TwitchExt-Vuex](https://www.npmjs.com/package/twitchext-vuex) 
+You can use my other package for VueJs/Vuex: 
+- Vue: [TwitchExt-Vue](https://www.npmjs.com/package/twitchext-vue)
+- Vuex: [TwitchExt-Vuex](https://www.npmjs.com/package/twitchext-vuex)
 
 ## Resources
 - [Twitch Documentation](https://dev.twitch.tv/docs/extensions/reference/#javascript-helper)
